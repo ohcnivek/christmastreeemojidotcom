@@ -20,7 +20,10 @@ const EmojiCard = ({ emoji, copyContent }: EmojiCardProps) => {
     <a
       href="#"
       className="min-w-md w-full md:w-1/2 p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 shadow-lg shadow-green-700/50"
-      onClick={() => {
+      onClick={(e) => {
+        //prevent default call to /
+        e.preventDefault();
+
         setCopied(true);
         navigator.clipboard.writeText(unicodeToChar(copyContent));
       }}
@@ -48,7 +51,7 @@ export default function Home() {
         <title> Copy/ Paste Christmas Tree Emojis</title>
         <meta
           name="description"
-          content="Copy / paste your best christmas tree emojis."
+          content="Copy / paste the best christmas tree emojis from simple to intricate and complex."
         />
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" />
