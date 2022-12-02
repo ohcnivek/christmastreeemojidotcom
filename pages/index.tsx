@@ -17,13 +17,11 @@ const EmojiCard = ({ emoji, copyContent }: EmojiCardProps) => {
   };
 
   return (
-    <a
-      href="#"
+    <button
       className="min-w-md w-full md:w-1/2 p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 shadow-lg shadow-green-700/50"
       onClick={(e) => {
         //prevent default call to /
         e.preventDefault();
-
         setCopied(true);
         navigator.clipboard.writeText(unicodeToChar(copyContent));
       }}
@@ -40,7 +38,7 @@ const EmojiCard = ({ emoji, copyContent }: EmojiCardProps) => {
           {copied ? "Copied ✅" : "Copy"}
         </p>
       </div>
-    </a>
+    </button>
   );
 };
 
