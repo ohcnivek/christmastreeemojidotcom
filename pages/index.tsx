@@ -27,7 +27,7 @@ const EmojiCard = ({ emoji, copyContent }: EmojiCardProps) => {
       }}
     >
       <div className="flex flex-col items-center justify-center pb-12">
-        <div className="flex">{emoji}</div>
+        <div>{emoji}</div>
         <p
           className={clsx(
             "flex font-extrabold text-xl md:text-5xl",
@@ -74,7 +74,7 @@ export default function Home() {
           ></EmojiCard>
           <EmojiCard
             emoji={
-              <div className="flex flex-col w-40 text-2xl md:text-3xl">
+              <div className="flex flex-col items-start w-40 text-2xl md:text-3xl">
                 <p>⬜️ ⬜️ 🌟</p>
                 <p>⬜️ ⬜️ 🎄</p>
                 <p>⬜️ &nbsp; 🎄 🎄</p>
