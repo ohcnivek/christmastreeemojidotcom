@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import Head from "next/head";
 import { useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 interface EmojiCardProps {
   emoji: React.ReactNode;
@@ -90,6 +91,7 @@ export default function Home() {
       <footer className="font-semibold text-gray-500">
         more epic christmas emojis coming soon ⚠️
       </footer>
+      <Analytics></Analytics>
     </div>
   );
 }
