@@ -19,25 +19,23 @@ const EmojiCard = ({ emoji, copyContent }: EmojiCardProps) => {
   return (
     <a
       href="#"
-      className="min-w-md w-full md:w-1/2 p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 justify-center shadow-lg shadow-green-700/50"
+      className="min-w-md w-full md:w-1/2 p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 shadow-lg shadow-green-700/50"
       onClick={() => {
         setCopied(true);
         navigator.clipboard.writeText(unicodeToChar(copyContent));
       }}
     >
-      <div className="flex flex-col items-center justify-between ">
-        <div className="pb-12">{emoji}</div>
-        <div className="rounded-lg outline-black">
-          <p
-            className={clsx(
-              "font-extrabold  text-xl md:text-5xl",
-              copied && "text-green-300",
-              !copied && "text-red-400"
-            )}
-          >
-            {copied ? "Copied ✅" : "Copy"}
-          </p>
-        </div>
+      <div className="flex flex-col items-center justify-center pb-12">
+        <div className="flex">{emoji}</div>
+        <p
+          className={clsx(
+            "flex font-extrabold text-xl md:text-5xl",
+            copied && "text-green-300",
+            !copied && "text-red-400"
+          )}
+        >
+          {copied ? "Copied ✅" : "Copy"}
+        </p>
       </div>
     </a>
   );
@@ -47,11 +45,12 @@ export default function Home() {
   return (
     <div className="p-12 min-h-screen">
       <Head>
-        <title>Christmas Emoji</title>
+        <title> Copy/ Paste Christmas Tree Emojis</title>
         <meta
-          name="Christmas Tree Emoji"
-          content="ChristmasTree emoji com christmas holiday emoji"
+          name="description"
+          content="Copy / paste your best christmas tree emojis."
         />
+        <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="md:flex">
@@ -75,12 +74,12 @@ export default function Home() {
           <EmojiCard
             emoji={
               <div className="flex flex-col w-40 text-2xl md:text-3xl">
-                <h5>⬜️ ⬜️ 🌟</h5>
-                <h5>⬜️ ⬜️ 🎄</h5>
-                <h5>⬜️ &nbsp; 🎄 🎄</h5>
-                <h5>⬜️ 🎄 🎄 🎄</h5>
-                <h5>&nbsp; 🎄 🎄 🎄 🎄</h5>
-                <h5>⬜ 🎁 🎁 🎁</h5>
+                <p>⬜️ ⬜️ 🌟</p>
+                <p>⬜️ ⬜️ 🎄</p>
+                <p>⬜️ &nbsp; 🎄 🎄</p>
+                <p>⬜️ 🎄 🎄 🎄</p>
+                <p>&nbsp; 🎄 🎄 🎄 🎄</p>
+                <p>⬜ 🎁 🎁 🎁</p>
               </div>
             }
             copyContent="◽◽🌟 \u000A◽◽🎄 \u000A◽ \u0020  🎄🎄 \u000A◽🎄⁣🎄🎄 \u000A \u0020  🎄🎄🎄🎄 \u000A🎄🎄🎄🎄🎄 \u000A◽ 🎁🎁🎁 \u000A"
